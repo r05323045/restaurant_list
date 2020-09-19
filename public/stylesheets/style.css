@@ -10,6 +10,14 @@ header {
   color: #226089;
 }
 
+.navbar .btn {
+  background: #4592af;
+}
+
+.navbar .btn:hover {
+  background: #226089;
+}
+
 .banner {
   position: relative;
   z-index: -1;
@@ -54,14 +62,24 @@ header {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
 
-.card img{
-  height: 180px;
+.card img {
+  min-height: 180px;
+  max-height: 180px;
 }
 
-.card-title{
-  overflow:hidden;
-  text-overflow:ellipsis;
-  white-space:nowrap;
+.card-title {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-footer .do-something a {
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+}
+.card-footer .do-something .btn {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.8rem;
 }
 
 .restaurant-category {
