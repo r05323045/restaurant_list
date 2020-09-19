@@ -1,0 +1,81 @@
+<!-- ./views/index.handlebars -->
+<div class="container search-bar">
+  <div class="search-bar-outer">
+    <div class="search-bar-inner">
+      <form action="/search">
+        <h4 class="mb-2">尋找餐廳：</h4>
+        <div class="input-group">
+          <input type="text" name="keyword" class="form-control" placeholder="輸入餐廳、分類" aria-label="Restaurant Name..." value="" aria-describedby="search-button">
+          <div class="input-group-append">
+            <button class="btn btn-major" type="submit" id="search-button"><i class="fas fa-search"></i></button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="container mt-5">
+  <div class="text-right mb-5 col-md-10 col-12 mx-auto">
+    <a href="/restaurants/new">
+      <div class="btn btn-primary">新增餐廳</div>
+    </a>
+  </div>
+  <div class="row">
+    <div class="col-md-10 col-12 mx-auto">
+      <div class="card-columns">
+        {{#each restaurants}}
+          <div class="card mb-3">
+            <a href="/restaurants/{{this._id}}" class="text-secondary">
+              <img class="card-img-top" src="{{this.image}}" alt="{{this.name}}">
+            </a>
+            <div class="card-body p-3">
+              <a href="/restaurants/{{this._id}}" class="text-secondary">
+              <div>
+                  <h6 class="card-title mb-1">{{this.name}}</h6>
+
+                  <div class="restaurant-category mb-1">
+                    <i class="fas fa-utensils pr-2"></i> {{this.category}}
+                  </div>
+
+                  <span class="badge badge-pill badge-danger font-weight-normal">
+                    {{this.rating}}
+                    <i class="fas fa-star fa-xs"></i>
+                  </span>
+                </div>
+              </a>
+            </div>
+            <div class="card-footer d-flex">
+              <div class="flex-grow-1"></div>
+              <div class="do-something">
+                <a href="/restaurants/{{this._id}}/edit" class="btn btn-secondary">Edit</a>
+                <button data-toggle="modal" data-target="#deletModal_{{this._id}}" class="btn btn-danger">Delete</button>
+              </div>
+            </div>
+          </div>
+          <div id="deletModal_{{this._id}}" class="modal" tabindex="-1" role="dialog">
+            <div class="modal-dialog" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title">確認刪除</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  <p>確定要刪除<span class="mx-1 font-weight-bold">{{this.name}}</span>嗎?<span class="text-secondary">(刪除後將無法復原)</span></p>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-dismiss="modal">關閉</button>
+                  <form action="./restaurants/{{ this._id }}/delete" method="POST" style="display: inline;">
+                    <button type="submit" class="btn btn-danger">刪除</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>
