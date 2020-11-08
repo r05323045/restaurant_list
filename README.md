@@ -34,4 +34,13 @@ $ npm run seed
 $ npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) and take a look around
+Open [http://localhost:3000](http://localhost:3000) and take a look around.
+
+We have two fake users for testing:
+
+| Username      | Email             | Password |
+| ------------- |:-----------------:|:--------:|
+| user1         | user1@example.com | 12345678 |
+| user2         | user2@example.com | 12345678 |
+
+Enjoy!
