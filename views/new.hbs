@@ -13,12 +13,9 @@
           <label for="FormControlInput2">餐廳類別</label>
           <select class="form-control" name="category" id="FormControlInput2" required>
             <option value="" selected>請選擇</option>
-            <option value="日本料理">日本料理</option>
-            <option value="美式">美式</option>
-            <option value="義式餐廳">義式餐廳</option>
-            <option value="咖啡">咖啡</option>
-            <option value="酒吧">酒吧</option>
-            <option value="其他">其他</option>
+            {{#each allCategories}}
+              <option value="{{this}}">{{this}}</option>
+            {{/each}}
           </select>
         </div>
 
@@ -34,7 +31,7 @@
 
         <div class="form-group">
           <label for="FormControlInput5">餐廳電話</label>
-          <input class="form-control" id="FormControlInput5" type="number" placeholder="請輸入餐廳電話" name="phone" required="required">
+          <input class="form-control" id="FormControlInput5" type="text" placeholder="請輸入餐廳電話" name="phone" required="required">
         </div>
 
         <div class="form-group">
@@ -46,10 +43,12 @@
           <label for="FormControlInput7">餐廳照片</label>
           <input class="form-control" id="FormControlInput7" type="url" placeholder="請輸入餐廳照片連結" name="image" required="required">
         </div>
+
         <div class="mt-5 button-wrapper row justify-content-center">
           <button type="submit" class="col-12 btn btn-primary">新增</button>
           <a href="/" class="my-3 text-secondary">返回首頁</a>
         </div>
+
       </div>
     </div>
   </div>

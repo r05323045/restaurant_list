@@ -4,69 +4,47 @@
     <div class="row">
       <div class="col-12 col-md-10 col-lg-8 mx-auto">
 
-        <div class="mb-2 d-flex">
-          <div class="text-secondary text-center">
-            餐廳名稱：
-          </div>
-          <div class="flex-grow-1">
-            <input class="w-100" type="text" placeholder="name" name="name" value="{{restaurant.name}}">
-          </div>
+        <div class="form-group">
+          <label for="FormControlInput1">餐廳名稱</label>
+          <input class="form-control" id="FormControlInput1" type="text" placeholder="請輸入餐廳名稱" name="name" value="{{restaurant.name}}" required="required">
         </div>
 
-        <div class="mb-2 d-flex">
-          <div class="text-secondary text-center">
-            餐廳類別：
-          </div>
-          <div class="flex-grow-1">
-            <input class="w-100" type="text" placeholder="category" name="category" value="{{restaurant.category}}">
-          </div>
+        <div class="form-group">
+          <label for="FormControlInput2">餐廳類別</label>
+          <select class="form-control" name="category" id="FormControlInput2" required>
+            {{#each categoryArray}}
+              <option value="{{this.name}}" {{#if this.selected}}selected{{/if}}>{{this.name}}</option>
+            {{/each}}
+          </select>
         </div>
 
-        <div class="mb-2 d-flex">
-          <div class="text-secondary text-center">
-            餐廳地址：
-          </div>
-          <div class="flex-grow-1">
-            <input class="w-100" type="text" placeholder="location" name="location" value="{{restaurant.location}}">
-          </div>
+        <div class="form-group">
+          <label for="FormControlInput3">餐廳地址</label>
+          <input class="form-control" id="FormControlInput3" type="text" placeholder="請輸入餐廳地址" name="location" value="{{restaurant.location}}" required="required">
         </div>
 
-        <div class="mb-2 d-flex">
-          <div class="text-secondary text-center">
-            地址連結：
-          </div>
-          <div class="flex-grow-1">
-            <input class="w-100" type="text" placeholder="google_map" name="google_map" value="{{restaurant.google_map}}">
-          </div>
+        <div class="form-group">
+          <label for="FormControlInput4">地址連結</label>
+          <input class="form-control" id="FormControlInput4" type="url" placeholder="請輸入餐廳地址連結" name="google_map" value="{{restaurant.google_map}}" required="required">
         </div>
 
-        <div class="mb-2 d-flex">
-          <div class="text-secondary text-center">
-            餐廳電話：
-          </div>
-          <div class="flex-grow-1">
-            <input class="w-100" type="text" placeholder="phone" name="phone" value="{{restaurant.phone}}">
-          </div>
+        <div class="form-group">
+          <label for="FormControlInput5">餐廳電話</label>
+          <input class="form-control" id="FormControlInput5" type="text" placeholder="請輸入餐廳電話" name="phone" value="{{restaurant.phone}}" required="required">
         </div>
 
-        <div class="mb-2 d-flex">
-          <div class="text-secondary text-center">
-            餐廳描述：
-          </div>
-          <div class="flex-grow-1">
-            <textarea class="w-100" placeholder="description" name="description">{{restaurant.description}}</textarea>
-          </div>
+        <div class="form-group">
+          <label for="FormControlInput6">餐廳描述</label>
+          <textarea class="form-control" id="FormControlInput6" type="text" placeholder="請描述餐廳" name="description" required>{{restaurant.description}}</textarea>
         </div>
 
-        <div class="mb-5 d-flex">
-          <div class="text-secondary text-center">
-            餐廳照片：
-          </div>
-          <div class="flex-grow-1">
-            <input class="w-100" type="text" placeholder="imageUrl" name="image" value="{{restaurant.image}}">
-          </div>
+        <div class="form-group">
+          <label for="FormControlInput7">餐廳照片</label>
+          <input class="form-control" id="FormControlInput7" type="url" placeholder="請輸入餐廳照片連結" name="image" value="{{restaurant.image}}" required="required">
         </div>
+
         <img class="rounded mx-auto d-block mb-4 w-100" src="{{restaurant.image}}" alt="{{restaurant.name}}" style="max-width: 600px;">
+
         <div class="mt-5 button-wrapper row justify-content-center">
           <button type="submit" class="col-12 btn btn-secondary">Update</button>
           <a href="/" class="my-3 text-secondary">返回首頁</a>
