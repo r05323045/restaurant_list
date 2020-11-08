@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Restaurant List</title>
 
   <link rel="stylesheet" href="https://bootswatch.com/4/united/bootstrap.min.css" crossorigin="anonymous">
   <link rel="stylesheet" href="/stylesheets/style.css">
@@ -19,11 +19,13 @@
       <div class="container">
         <a class="navbar-brand" href="/">
           <img src="https://assets-lighthouse.s3.amazonaws.com/uploads/image/file/6227/restaurant-list-logo.png" width="30" height="30" class="d-inline-block align-top" alt="好。吃">
-          我的餐廳清單
+          {{#if isAuthenticated}}{{ user.name}}的{{/if}}餐廳清單
         </a>
+        {{#if isAuthenticated}}
         <a href="/restaurants/new">
-          <div class="btn btn-primary">Create</div>
+          <div class="btn btn-info">新增餐廳</div>
         </a>
+        {{/if}}
       </div>
     </nav>
 
