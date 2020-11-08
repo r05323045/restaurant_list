@@ -25,17 +25,22 @@ router.get('/sort', (req, res) => {
   const sortBy = req.query.sortBy
   let order = { name: 1 }
   let ascSelect, dscSelect, categorySelect, locationSelect
-  if (sortBy === 'dsc') {
-    order = { name: -1 }
-    dscSelect = 'selected'
-  } else if (sortBy === 'category') {
-    order = { category: 1 }
-    categorySelect = 'selected'
-  } else if (sortBy === 'location') {
-    order = { location: 1 }
-    locationSelect = 'selected'
-  } else {
-    ascSelect = 'selected'
+  switch (sortBy) {
+    case 'dsc':
+      order = { name: -1 }
+      dscSelect = 'selected'
+      break
+    case 'asc':
+      ascSelect = 'selected'
+      break
+    case 'category':
+      order = { category: 1 }
+      categorySelect = 'selected'
+      break
+    case 'location':
+      order = { location: 1 }
+      locationSelect = 'selected'
+      break
   }
   const userId = req.user._id
   return Restaurant.find({ userId })
