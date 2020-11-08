@@ -4,70 +4,50 @@
     <div class="row">
       <div class="col-12 col-md-10 col-lg-8 mx-auto">
 
-        <div class="mb-2 d-flex">
-          <div class="text-secondary text-center">
-            餐廳名稱：
-          </div>
-          <div class="flex-grow-1">
-            <input class="w-100" type="text" placeholder="name" name="name">
-          </div>
+        <div class="form-group">
+          <label for="FormControlInput1">餐廳名稱</label>
+          <input class="form-control" id="FormControlInput1" type="text" placeholder="請輸入餐廳名稱" name="name" required="required">
         </div>
 
-        <div class="mb-2 d-flex">
-          <div class="text-secondary text-center">
-            餐廳類別：
-          </div>
-          <div class="flex-grow-1">
-            <input class="w-100" type="text" placeholder="category" name="category">
-          </div>
+        <div class="form-group">
+          <label for="FormControlInput2">餐廳類別</label>
+          <select class="form-control" name="category" id="FormControlInput2" required>
+            <option value="" selected>請選擇</option>
+            <option value="日本料理">日本料理</option>
+            <option value="美式">美式</option>
+            <option value="義式餐廳">義式餐廳</option>
+            <option value="咖啡">咖啡</option>
+            <option value="酒吧">酒吧</option>
+            <option value="其他">其他</option>
+          </select>
         </div>
 
-        <div class="mb-2 d-flex">
-          <div class="text-secondary text-center">
-            餐廳地址：
-          </div>
-          <div class="flex-grow-1">
-            <input class="w-100" type="text" placeholder="location" name="location">
-          </div>
+        <div class="form-group">
+          <label for="FormControlInput3">餐廳地址</label>
+          <input class="form-control" id="FormControlInput3" type="text" placeholder="請輸入餐廳地址" name="location" required="required">
         </div>
 
-        <div class="mb-2 d-flex">
-          <div class="text-secondary text-center">
-            地址連結：
-          </div>
-          <div class="flex-grow-1">
-            <input class="w-100" type="text" placeholder="google_map" name="google_map">
-          </div>
+        <div class="form-group">
+          <label for="FormControlInput4">地址連結</label>
+          <input class="form-control" id="FormControlInput4" type="url" placeholder="請輸入餐廳地址連結" name="google_map" required="required">
         </div>
 
-        <div class="mb-2 d-flex">
-          <div class="text-secondary text-center">
-            餐廳電話：
-          </div>
-          <div class="flex-grow-1">
-            <input class="w-100" type="text" placeholder="phone" name="phone">
-          </div>
+        <div class="form-group">
+          <label for="FormControlInput5">餐廳電話</label>
+          <input class="form-control" id="FormControlInput5" type="number" placeholder="請輸入餐廳電話" name="phone" required="required">
         </div>
 
-        <div class="mb-2 d-flex">
-          <div class="text-secondary text-center">
-            餐廳描述：
-          </div>
-          <div class="flex-grow-1">
-            <textarea class="w-100" placeholder="description" name="description"></textarea>
-          </div>
+        <div class="form-group">
+          <label for="FormControlInput6">餐廳描述</label>
+          <textarea class="form-control" id="FormControlInput6" type="text" placeholder="請描述餐廳" name="description" required></textarea>
         </div>
 
-        <div class="mb-5 d-flex">
-          <div class="text-secondary text-center">
-            餐廳照片：
-          </div>
-          <div class="flex-grow-1">
-            <input class="w-100" type="text" placeholder="imageUrl" name="image">
-          </div>
+        <div class="form-group">
+          <label for="FormControlInput7">餐廳照片</label>
+          <input class="form-control" id="FormControlInput7" type="url" placeholder="請輸入餐廳照片連結" name="image" required="required">
         </div>
         <div class="mt-5 button-wrapper row justify-content-center">
-          <button type="submit" class="col-12 btn btn-primary">Add</button>
+          <button type="submit" class="col-12 btn btn-primary">新增</button>
           <a href="/" class="my-3 text-secondary">返回首頁</a>
         </div>
       </div>
