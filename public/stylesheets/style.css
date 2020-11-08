@@ -10,11 +10,7 @@ header {
   color: #226089;
 }
 
-.navbar .btn {
-  background: #4592af;
-}
-
-.navbar .btn:hover {
+.navbar .btn-info:hover {
   background: #226089;
 }
 

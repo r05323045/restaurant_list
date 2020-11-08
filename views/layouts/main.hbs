@@ -22,9 +22,12 @@
           {{#if isAuthenticated}}{{ user.name}}的{{/if}}餐廳清單
         </a>
         {{#if isAuthenticated}}
-        <a href="/restaurants/new">
-          <div class="btn btn-info">新增餐廳</div>
-        </a>
+        <div class="text-right">
+          <a href="/restaurants/new" class="btn btn-info mr-3">新增餐廳</a>
+          <a href="/users/logout" class="btn btn-outline-info">Logout</a>
+        </div>
+        {{else}}
+        <a href="/users/login" class="btn btn-info">Login</a>
         {{/if}}
       </div>
     </nav>
