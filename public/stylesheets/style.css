@@ -58,6 +58,10 @@ header {
   border-color: #ced4da;
 }
 
+.login {
+  max-width: 680px;
+}
+
 .card {
   box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
 }
