@@ -49,6 +49,16 @@ header {
   color: white;
 }
 
+.btn-facebook {
+  background-color: #4267B2; 
+  color: white;
+}
+
+.btn-facebook:hover {
+  background-color: #072d72; 
+  color: white;
+}
+
 .form-control:focus {
   box-shadow: none;
   border-color: #ced4da;
