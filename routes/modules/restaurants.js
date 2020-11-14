@@ -1,9 +1,9 @@
 const express = require('express')
 const router = express.Router()
 const Restaurant = require('../../models/restaurant')
+const allCategories = ['日本料理', '美式', '義式餐廳', '中東料理', '咖啡', '酒吧', '其他']
 
 router.get('/new', (req, res) => {
-  const allCategories = ['日本料理', '美式', '義式餐廳', '中東料理', '咖啡', '酒吧', '其他']
   return res.render('new', { allCategories })
 })
 
@@ -22,7 +22,6 @@ router.get('/:id/edit', (req, res) => {
   return Restaurant.findOne({ _id, userId })
     .lean()
     .then(restaurant => {
-      const allCategories = ['日本料理', '美式', '義式餐廳', '中東料理', '咖啡', '酒吧', '其他']
       const categoryArray = []
       allCategories.forEach((category, idx) => {
         categoryArray.push({ name: category, selected: false })
