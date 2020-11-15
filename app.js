@@ -44,6 +44,17 @@ app.use((req, res, next) => {
 
 app.use(routes)
 
+app.use(function (req, res, next) {
+  const err = new Error('Not Found')
+  err.status = 404
+  next(err)
+})
+
+app.use(function (err, req, res, next) {
+  res.status(err.status || 500)
+  res.render('error', { error: 'Not Found' })
+})
+
 app.listen(PORT, () => {
   console.log(`App is running on http://localhost:${PORT}`)
 })
