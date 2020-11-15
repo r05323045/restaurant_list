@@ -48,6 +48,7 @@ router.post('/', (req, res, next) => {
     location: req.body.location,
     google_map: req.body.google_map,
     phone: req.body.phone,
+    rating: Math.round(req.body.rating * 10) / 10,
     description: req.body.description,
     image: req.body.image,
     userId
@@ -69,6 +70,7 @@ router.put('/:id', (req, res, next) => {
       restaurant.location = req.body.location
       restaurant.google_map = req.body.google_map
       restaurant.phone = req.body.phone
+      restaurant.rating = Math.round(req.body.rating * 10) / 10
       restaurant.description = req.body.description
       restaurant.image = req.body.image
       return restaurant.save()
